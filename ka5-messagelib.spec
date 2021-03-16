@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		messagelib
 Summary:	Message library
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	3aaa14b81d58de3d4ad78c35a5f143f0
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	f322c1c563faccc02165809d088fd561
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -32,8 +32,6 @@ BuildRequires:	ka5-akonadi-devel >= %{kdeappsver}
 BuildRequires:	ka5-akonadi-mime-devel >= %{kdeappsver}
 BuildRequires:	ka5-akonadi-search-devel >= %{kdeappsver}
 BuildRequires:	ka5-grantleetheme-devel >= %{kdeappsver}
-BuildRequires:	ka5-kcontacts-devel >= %{kdeappsver}
-BuildRequires:	ka5-kdepim-apps-libs-devel >= %{kdeappsver}
 BuildRequires:	ka5-kidentitymanagement-devel >= %{kdeappsver}
 BuildRequires:	ka5-kldap-devel >= %{kdeappsver}
 BuildRequires:	ka5-kmailtransport-devel >= %{kdeappsver}
@@ -50,6 +48,7 @@ BuildRequires:	kf5-kcodecs-devel >= %{kframever}
 BuildRequires:	kf5-kcompletion-devel >= %{kframever}
 BuildRequires:	kf5-kconfig-devel >= %{kframever}
 BuildRequires:	kf5-kconfigwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kcontacts-devel >= %{kframever}
 BuildRequires:	kf5-kdbusaddons-devel >= %{kframever}
 BuildRequires:	kf5-ki18n-devel >= %{kframever}
 BuildRequires:	kf5-kiconthemes-devel >= %{kframever}
@@ -112,9 +111,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/messagelib.categories
-/etc/xdg/messagelib.renamecategories
-/etc/xdg/messageviewer_header_themes.knsrc
 %attr(755,root,root) %ghost %{_libdir}/libKF5MessageComposer.so.5
 %attr(755,root,root) %{_libdir}/libKF5MessageComposer.so.5.*.*
 %attr(755,root,root) %ghost %{_libdir}/libKF5MessageCore.so.5
@@ -133,7 +129,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt5/plugins/messageviewer/grantlee
 %dir %{_libdir}/qt5/plugins/messageviewer/grantlee/5.0
 %attr(755,root,root) %{_libdir}/qt5/plugins/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/messageviewer/messageviewer_defaultgrantleeheaderstyleplugin.so
 %{_datadir}/config.kcfg/customtemplates_kfg.kcfg
 %{_datadir}/config.kcfg/templatesconfiguration_kfg.kcfg
 %{_datadir}/kconf_update/messageviewer.upd
@@ -141,6 +136,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/libmessageviewer
 %{_datadir}/messagelist
 %{_datadir}/messageviewer
+%{_datadir}/knsrcfiles/messageviewer_header_themes.knsrc
+%{_datadir}/qlogging-categories5/messagelib.categories
+%{_datadir}/qlogging-categories5/messagelib.renamecategories
+%dir %{_libdir}/qt5/plugins/messageviewer/headerstyle
+%attr(755,root,root) %{_libdir}/qt5/plugins/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
 # TODO proper package
 %dir %{_datadir}/org.kde.syntax-highlighting
 %dir %{_datadir}/org.kde.syntax-highlighting/syntax
@@ -187,6 +187,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/mkspecs/modules/qt_MessageCore.pri
 %{_libdir}/qt5/mkspecs/modules/qt_MessageList.pri
 %{_libdir}/qt5/mkspecs/modules/qt_MessageViewer.pri
-%{_libdir}/qt5/mkspecs/modules/qt_MimeTreeParser.pri
 %{_libdir}/qt5/mkspecs/modules/qt_TemplateParser.pri
 %{_libdir}/qt5/mkspecs/modules/qt_WebEngineViewer.pri
