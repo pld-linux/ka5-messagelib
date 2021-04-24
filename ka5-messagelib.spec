@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		messagelib
 Summary:	Message library
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	f322c1c563faccc02165809d088fd561
+# Source0-md5:	c0e592fd3909686f5d0caae1bb95c6a8
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -111,19 +111,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libKF5MessageComposer.so.5
+%ghost %{_libdir}/libKF5MessageComposer.so.5
 %attr(755,root,root) %{_libdir}/libKF5MessageComposer.so.5.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5MessageCore.so.5
+%ghost %{_libdir}/libKF5MessageCore.so.5
 %attr(755,root,root) %{_libdir}/libKF5MessageCore.so.5.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5MessageList.so.5
+%ghost %{_libdir}/libKF5MessageList.so.5
 %attr(755,root,root) %{_libdir}/libKF5MessageList.so.5.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5MessageViewer.so.5
+%ghost %{_libdir}/libKF5MessageViewer.so.5
 %attr(755,root,root) %{_libdir}/libKF5MessageViewer.so.5.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5MimeTreeParser.so.5
+%ghost %{_libdir}/libKF5MimeTreeParser.so.5
 %attr(755,root,root) %{_libdir}/libKF5MimeTreeParser.so.5.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5TemplateParser.so.5
+%ghost %{_libdir}/libKF5TemplateParser.so.5
 %attr(755,root,root) %{_libdir}/libKF5TemplateParser.so.5.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5WebEngineViewer.so.5
+%ghost %{_libdir}/libKF5WebEngineViewer.so.5
 %attr(755,root,root) %{_libdir}/libKF5WebEngineViewer.so.5.*.*
 %dir %{_libdir}/qt5/plugins/messageviewer
 %dir %{_libdir}/qt5/plugins/messageviewer/grantlee
@@ -176,13 +176,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/cmake/KF5MimeTreeParser
 %{_libdir}/cmake/KF5TemplateParser
 %{_libdir}/cmake/KF5WebEngineViewer
-%attr(755,root,root) %{_libdir}/libKF5MessageComposer.so
-%attr(755,root,root) %{_libdir}/libKF5MessageCore.so
-%attr(755,root,root) %{_libdir}/libKF5MessageList.so
-%attr(755,root,root) %{_libdir}/libKF5MessageViewer.so
-%attr(755,root,root) %{_libdir}/libKF5MimeTreeParser.so
-%attr(755,root,root) %{_libdir}/libKF5TemplateParser.so
-%attr(755,root,root) %{_libdir}/libKF5WebEngineViewer.so
+%{_libdir}/libKF5MessageComposer.so
+%{_libdir}/libKF5MessageCore.so
+%{_libdir}/libKF5MessageList.so
+%{_libdir}/libKF5MessageViewer.so
+%{_libdir}/libKF5MimeTreeParser.so
+%{_libdir}/libKF5TemplateParser.so
+%{_libdir}/libKF5WebEngineViewer.so
 %{_libdir}/qt5/mkspecs/modules/qt_MessageComposer.pri
 %{_libdir}/qt5/mkspecs/modules/qt_MessageCore.pri
 %{_libdir}/qt5/mkspecs/modules/qt_MessageList.pri
