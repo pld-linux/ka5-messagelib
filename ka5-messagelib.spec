@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		messagelib
 Summary:	Message library
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	122d2f6d5a1f70ac195cc590cb36acb4
+# Source0-md5:	361e2b94ab389e95fc5cc0408ce9226f
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -166,20 +166,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/MimeTreeParser
 %{_includedir}/KF5/TemplateParser
 %{_includedir}/KF5/WebEngineViewer
-%{_includedir}/KF5/messagecomposer
-%{_includedir}/KF5/messagecomposer_version.h
-%{_includedir}/KF5/messagecore
-%{_includedir}/KF5/messagecore_version.h
-%{_includedir}/KF5/messagelist
-%{_includedir}/KF5/messagelist_version.h
-%{_includedir}/KF5/messageviewer
-%{_includedir}/KF5/messageviewer_version.h
-%{_includedir}/KF5/mimetreeparser
-%{_includedir}/KF5/mimetreeparser_version.h
-%{_includedir}/KF5/templateparser
-%{_includedir}/KF5/templateparser_version.h
-%{_includedir}/KF5/webengineviewer
-%{_includedir}/KF5/webengineviewer_version.h
 %{_libdir}/cmake/KF5MessageComposer
 %{_libdir}/cmake/KF5MessageCore
 %{_libdir}/cmake/KF5MessageList
