@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.04.3
+%define		kdeappsver	22.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		messagelib
 Summary:	Message library
 Name:		ka5-%{kaname}
-Version:	22.04.3
+Version:	22.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	bfc9ee1642620acea0f5eee6b1f5e52a
+# Source0-md5:	56b109a26c5821fbdc85ec099ce45f21
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -138,10 +138,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libKF5TemplateParser.so.5.*.*
 %ghost %{_libdir}/libKF5WebEngineViewer.so.5
 %attr(755,root,root) %{_libdir}/libKF5WebEngineViewer.so.5.*.*
-%dir %{_libdir}/qt5/plugins/messageviewer
-%dir %{_libdir}/qt5/plugins/messageviewer/grantlee
-%dir %{_libdir}/qt5/plugins/messageviewer/grantlee/5.0
-%attr(755,root,root) %{_libdir}/qt5/plugins/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
 %{_datadir}/config.kcfg/customtemplates_kfg.kcfg
 %{_datadir}/config.kcfg/templatesconfiguration_kfg.kcfg
 %{_datadir}/knotifications5/messageviewer.notifyrc
@@ -151,12 +147,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/knsrcfiles/messageviewer_header_themes.knsrc
 %{_datadir}/qlogging-categories5/messagelib.categories
 %{_datadir}/qlogging-categories5/messagelib.renamecategories
-%dir %{_libdir}/qt5/plugins/messageviewer/headerstyle
-%attr(755,root,root) %{_libdir}/qt5/plugins/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
 # TODO proper package
 %dir %{_datadir}/org.kde.syntax-highlighting
 %dir %{_datadir}/org.kde.syntax-highlighting/syntax
 %{_datadir}/org.kde.syntax-highlighting/syntax/kmail-template.xml
+%dir %{_libdir}/qt5/plugins/pim5/messageviewer
+%dir %{_libdir}/qt5/plugins/pim5/messageviewer/grantlee
+%dir %{_libdir}/qt5/plugins/pim5/messageviewer/grantlee/5.0
+%{_libdir}/qt5/plugins/pim5/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
+%dir %{_libdir}/qt5/plugins/pim5/messageviewer/headerstyle
+%{_libdir}/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
 
 %files devel
 %defattr(644,root,root,755)
