@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.12.3
+%define		kdeappsver	23.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		messagelib
 Summary:	Message library
 Name:		ka5-%{kaname}
-Version:	22.12.3
-Release:	3
+Version:	23.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	51022cb3ee6a13bcb569c6bb21f6209c
+# Source0-md5:	c87da3e60b0288a6fa68102ab34d3641
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -124,20 +124,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%ghost %{_libdir}/libKF5MessageComposer.so.5
-%attr(755,root,root) %{_libdir}/libKF5MessageComposer.so.5.*.*
-%ghost %{_libdir}/libKF5MessageCore.so.5
-%attr(755,root,root) %{_libdir}/libKF5MessageCore.so.5.*.*
-%ghost %{_libdir}/libKF5MessageList.so.5
-%attr(755,root,root) %{_libdir}/libKF5MessageList.so.5.*.*
-%ghost %{_libdir}/libKF5MessageViewer.so.5
-%attr(755,root,root) %{_libdir}/libKF5MessageViewer.so.5.*.*
-%ghost %{_libdir}/libKF5MimeTreeParser.so.5
-%attr(755,root,root) %{_libdir}/libKF5MimeTreeParser.so.5.*.*
-%ghost %{_libdir}/libKF5TemplateParser.so.5
-%attr(755,root,root) %{_libdir}/libKF5TemplateParser.so.5.*.*
-%ghost %{_libdir}/libKF5WebEngineViewer.so.5
-%attr(755,root,root) %{_libdir}/libKF5WebEngineViewer.so.5.*.*
 %{_datadir}/config.kcfg/customtemplates_kfg.kcfg
 %{_datadir}/config.kcfg/templatesconfiguration_kfg.kcfg
 %{_datadir}/knotifications5/messageviewer.notifyrc
@@ -154,36 +140,51 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt5/plugins/pim5/messageviewer
 %dir %{_libdir}/qt5/plugins/pim5/messageviewer/grantlee
 %dir %{_libdir}/qt5/plugins/pim5/messageviewer/grantlee/5.0
-%{_libdir}/qt5/plugins/pim5/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/pim5/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
 %dir %{_libdir}/qt5/plugins/pim5/messageviewer/headerstyle
-%{_libdir}/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
+
+%ghost %{_libdir}/libKPim5MessageComposer.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MessageComposer.so.*.*.*
+%ghost %{_libdir}/libKPim5MessageCore.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MessageCore.so.*.*.*
+%ghost %{_libdir}/libKPim5MessageList.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MessageList.so.*.*.*
+%ghost %{_libdir}/libKPim5MessageViewer.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MessageViewer.so.*.*.*
+%ghost %{_libdir}/libKPim5MimeTreeParser.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MimeTreeParser.so.*.*.*
+%ghost %{_libdir}/libKPim5TemplateParser.so.5
+%attr(755,root,root) %{_libdir}/libKPim5TemplateParser.so.*.*.*
+%ghost %{_libdir}/libKPim5WebEngineViewer.so.5
+%attr(755,root,root) %{_libdir}/libKPim5WebEngineViewer.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF5/MessageComposer
-%{_includedir}/KF5/MessageCore
-%{_includedir}/KF5/MessageList
-%{_includedir}/KF5/MessageViewer
-%{_includedir}/KF5/MimeTreeParser
-%{_includedir}/KF5/TemplateParser
-%{_includedir}/KF5/WebEngineViewer
-%{_libdir}/cmake/KF5MessageComposer
-%{_libdir}/cmake/KF5MessageCore
-%{_libdir}/cmake/KF5MessageList
-%{_libdir}/cmake/KF5MessageViewer
-%{_libdir}/cmake/KF5MimeTreeParser
-%{_libdir}/cmake/KF5TemplateParser
-%{_libdir}/cmake/KF5WebEngineViewer
-%{_libdir}/libKF5MessageComposer.so
-%{_libdir}/libKF5MessageCore.so
-%{_libdir}/libKF5MessageList.so
-%{_libdir}/libKF5MessageViewer.so
-%{_libdir}/libKF5MimeTreeParser.so
-%{_libdir}/libKF5TemplateParser.so
-%{_libdir}/libKF5WebEngineViewer.so
 %{_libdir}/qt5/mkspecs/modules/qt_MessageComposer.pri
 %{_libdir}/qt5/mkspecs/modules/qt_MessageCore.pri
 %{_libdir}/qt5/mkspecs/modules/qt_MessageList.pri
 %{_libdir}/qt5/mkspecs/modules/qt_MessageViewer.pri
 %{_libdir}/qt5/mkspecs/modules/qt_TemplateParser.pri
 %{_libdir}/qt5/mkspecs/modules/qt_WebEngineViewer.pri
+%{_includedir}/KPim5/MessageComposer
+%{_includedir}/KPim5/MessageCore
+%{_includedir}/KPim5/MessageList
+%{_includedir}/KPim5/MessageViewer
+%{_includedir}/KPim5/MimeTreeParser
+%{_includedir}/KPim5/TemplateParser
+%{_includedir}/KPim5/WebEngineViewer
+%{_libdir}/cmake/KPim5MessageComposer
+%{_libdir}/cmake/KPim5MessageCore
+%{_libdir}/cmake/KPim5MessageList
+%{_libdir}/cmake/KPim5MessageViewer
+%{_libdir}/cmake/KPim5MimeTreeParser
+%{_libdir}/cmake/KPim5TemplateParser
+%{_libdir}/cmake/KPim5WebEngineViewer
+%{_libdir}/libKPim5MessageComposer.so
+%{_libdir}/libKPim5MessageCore.so
+%{_libdir}/libKPim5MessageList.so
+%{_libdir}/libKPim5MessageViewer.so
+%{_libdir}/libKPim5MimeTreeParser.so
+%{_libdir}/libKPim5TemplateParser.so
+%{_libdir}/libKPim5WebEngineViewer.so
