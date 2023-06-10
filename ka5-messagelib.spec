@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.04.1
+%define		kdeappsver	23.04.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		messagelib
 Summary:	Message library
 Name:		ka5-%{kaname}
-Version:	23.04.1
+Version:	23.04.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	234b993abe2ef7099f13b158f640e076
+# Source0-md5:	364faf051e5bd9cba394fbff1c1f375c
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
