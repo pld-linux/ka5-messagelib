@@ -1,35 +1,35 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.01.95
+%define		kdeappsver	23.08.4
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		messagelib
 Summary:	Message library
 Name:		ka5-%{kaname}
-Version:	24.01.95
-Release:	0.1
+Version:	23.08.4
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
-Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d727167ccd959b92ca896043649b24c5
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	b8e0467b1f4ac763e3128d172b2d71a6
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6Gui-devel
-BuildRequires:	Qt6Network-devel
-BuildRequires:	Qt6Positioning-devel >= 5.11.1
-BuildRequires:	Qt6PrintSupport-devel
-BuildRequires:	Qt6Qml-devel >= 5.11.1
-BuildRequires:	Qt6Quick-devel >= 5.11.1
-BuildRequires:	Qt6Test-devel
-BuildRequires:	Qt6WebChannel-devel >= 5.11.1
-BuildRequires:	Qt6WebEngine-devel >= 5.11.1
-BuildRequires:	Qt6Widgets-devel
+BuildRequires:	Qt5Core-devel
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5Network-devel
+BuildRequires:	Qt5Positioning-devel >= 5.11.1
+BuildRequires:	Qt5PrintSupport-devel
+BuildRequires:	Qt5Qml-devel >= 5.11.1
+BuildRequires:	Qt5Quick-devel >= 5.11.1
+BuildRequires:	Qt5Test-devel
+BuildRequires:	Qt5WebChannel-devel >= 5.11.1
+BuildRequires:	Qt5WebEngine-devel >= 5.11.1
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
-BuildRequires:	gpgme-qt6-devel >= 1.8.0
-BuildRequires:	grantlee-qt6-devel >= 5.1
+BuildRequires:	gpgme-qt5-devel >= 1.8.0
+BuildRequires:	grantlee-qt5-devel >= 5.1
 BuildRequires:	ka5-akonadi-contacts-devel >= %{kdeappsver}
 BuildRequires:	ka5-akonadi-devel >= %{kdeappsver}
 BuildRequires:	ka5-akonadi-mime-devel >= %{kdeappsver}
@@ -45,29 +45,29 @@ BuildRequires:	ka5-libgravatar-devel >= %{kdeappsver}
 BuildRequires:	ka5-libkdepim-devel >= %{kdeappsver}
 BuildRequires:	ka5-libkleo-devel >= %{kdeappsver}
 BuildRequires:	ka5-pimcommon-devel >= %{kdeappsver}
-BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
-BuildRequires:	kf6-karchive-devel >= %{kframever}
-BuildRequires:	kf6-kcodecs-devel >= %{kframever}
-BuildRequires:	kf6-kcompletion-devel >= %{kframever}
-BuildRequires:	kf6-kconfig-devel >= %{kframever}
-BuildRequires:	kf6-kconfigwidgets-devel >= %{kframever}
-BuildRequires:	kf6-kcontacts-devel >= %{kframever}
-BuildRequires:	kf6-kdbusaddons-devel >= %{kframever}
-BuildRequires:	kf6-ki18n-devel >= %{kframever}
-BuildRequires:	kf6-kiconthemes-devel >= %{kframever}
-BuildRequires:	kf6-kio-devel >= %{kframever}
-BuildRequires:	kf6-kitemviews-devel >= %{kframever}
-BuildRequires:	kf6-kjobwidgets-devel >= %{kframever}
-BuildRequires:	kf6-kservice-devel >= %{kframever}
-BuildRequires:	kf6-ktextwidgets-devel >= %{kframever}
-BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
-BuildRequires:	kf6-kwindowsystem-devel >= %{kframever}
-BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
-BuildRequires:	kf6-sonnet-devel >= %{kframever}
-BuildRequires:	kf6-syntax-highlighting-devel >= %{kframever}
+BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-karchive-devel >= %{kframever}
+BuildRequires:	kf5-kcodecs-devel >= %{kframever}
+BuildRequires:	kf5-kcompletion-devel >= %{kframever}
+BuildRequires:	kf5-kconfig-devel >= %{kframever}
+BuildRequires:	kf5-kconfigwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kcontacts-devel >= %{kframever}
+BuildRequires:	kf5-kdbusaddons-devel >= %{kframever}
+BuildRequires:	kf5-ki18n-devel >= %{kframever}
+BuildRequires:	kf5-kiconthemes-devel >= %{kframever}
+BuildRequires:	kf5-kio-devel >= %{kframever}
+BuildRequires:	kf5-kitemviews-devel >= %{kframever}
+BuildRequires:	kf5-kjobwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kservice-devel >= %{kframever}
+BuildRequires:	kf5-ktextwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf5-kwindowsystem-devel >= %{kframever}
+BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
+BuildRequires:	kf5-sonnet-devel >= %{kframever}
+BuildRequires:	kf5-syntax-highlighting-devel >= %{kframever}
 BuildRequires:	ninja
-BuildRequires:	qca-qt6-devel
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qca-qt5-devel
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
@@ -123,53 +123,67 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libKPim6MessageComposer.so.*.*
-%ghost %{_libdir}/libKPim6MessageComposer.so.6
-%attr(755,root,root) %{_libdir}/libKPim6MessageCore.so.*.*
-%ghost %{_libdir}/libKPim6MessageCore.so.6
-%attr(755,root,root) %{_libdir}/libKPim6MessageList.so.*.*
-%ghost %{_libdir}/libKPim6MessageList.so.6
-%attr(755,root,root) %{_libdir}/libKPim6MessageViewer.so.*.*
-%ghost %{_libdir}/libKPim6MessageViewer.so.6
-%attr(755,root,root) %{_libdir}/libKPim6MimeTreeParser.so.*.*
-%ghost %{_libdir}/libKPim6MimeTreeParser.so.6
-%attr(755,root,root) %{_libdir}/libKPim6TemplateParser.so.*.*
-%ghost %{_libdir}/libKPim6TemplateParser.so.6
-%attr(755,root,root) %{_libdir}/libKPim6WebEngineViewer.so.*.*
-%ghost %{_libdir}/libKPim6WebEngineViewer.so.6
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/messageviewer/kf6/ktexttemplate/messageviewer_ktexttemplate_extension.so
 %{_datadir}/config.kcfg/customtemplates_kfg.kcfg
 %{_datadir}/config.kcfg/templatesconfiguration_kfg.kcfg
-%{_datadir}/knotifications6/messageviewer.notifyrc
-%{_datadir}/knsrcfiles/messageviewer_header_themes.knsrc
+%{_datadir}/knotifications5/messageviewer.notifyrc
 %{_datadir}/libmessageviewer
 %{_datadir}/messagelist
 %{_datadir}/messageviewer
+%{_datadir}/knsrcfiles/messageviewer_header_themes.knsrc
+%{_datadir}/qlogging-categories5/messagelib.categories
+%{_datadir}/qlogging-categories5/messagelib.renamecategories
+# TODO proper package
+%dir %{_datadir}/org.kde.syntax-highlighting
+%dir %{_datadir}/org.kde.syntax-highlighting/syntax
 %{_datadir}/org.kde.syntax-highlighting/syntax/kmail-template.xml
-%{_datadir}/qlogging-categories6/messagelib.categories
-%{_datadir}/qlogging-categories6/messagelib.renamecategories
+%dir %{_libdir}/qt5/plugins/pim5/messageviewer
+%dir %{_libdir}/qt5/plugins/pim5/messageviewer/grantlee
+%dir %{_libdir}/qt5/plugins/pim5/messageviewer/grantlee/5.0
+%attr(755,root,root) %{_libdir}/qt5/plugins/pim5/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
+%dir %{_libdir}/qt5/plugins/pim5/messageviewer/headerstyle
+%attr(755,root,root) %{_libdir}/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
+
+%ghost %{_libdir}/libKPim5MessageComposer.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MessageComposer.so.*.*.*
+%ghost %{_libdir}/libKPim5MessageCore.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MessageCore.so.*.*.*
+%ghost %{_libdir}/libKPim5MessageList.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MessageList.so.*.*.*
+%ghost %{_libdir}/libKPim5MessageViewer.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MessageViewer.so.*.*.*
+%ghost %{_libdir}/libKPim5MimeTreeParser.so.5
+%attr(755,root,root) %{_libdir}/libKPim5MimeTreeParser.so.*.*.*
+%ghost %{_libdir}/libKPim5TemplateParser.so.5
+%attr(755,root,root) %{_libdir}/libKPim5TemplateParser.so.*.*.*
+%ghost %{_libdir}/libKPim5WebEngineViewer.so.5
+%attr(755,root,root) %{_libdir}/libKPim5WebEngineViewer.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KPim6/MessageComposer
-%{_includedir}/KPim6/MessageCore
-%{_includedir}/KPim6/MessageList
-%{_includedir}/KPim6/MessageViewer
-%{_includedir}/KPim6/MimeTreeParser
-%{_includedir}/KPim6/TemplateParser
-%{_includedir}/KPim6/WebEngineViewer
-%{_libdir}/cmake/KPim6MessageComposer
-%{_libdir}/cmake/KPim6MessageCore
-%{_libdir}/cmake/KPim6MessageList
-%{_libdir}/cmake/KPim6MessageViewer
-%{_libdir}/cmake/KPim6MimeTreeParser
-%{_libdir}/cmake/KPim6TemplateParser
-%{_libdir}/cmake/KPim6WebEngineViewer
-%{_libdir}/libKPim6MessageComposer.so
-%{_libdir}/libKPim6MessageCore.so
-%{_libdir}/libKPim6MessageList.so
-%{_libdir}/libKPim6MessageViewer.so
-%{_libdir}/libKPim6MimeTreeParser.so
-%{_libdir}/libKPim6TemplateParser.so
-%{_libdir}/libKPim6WebEngineViewer.so
+%{_libdir}/qt5/mkspecs/modules/qt_MessageComposer.pri
+%{_libdir}/qt5/mkspecs/modules/qt_MessageCore.pri
+%{_libdir}/qt5/mkspecs/modules/qt_MessageList.pri
+%{_libdir}/qt5/mkspecs/modules/qt_MessageViewer.pri
+%{_libdir}/qt5/mkspecs/modules/qt_TemplateParser.pri
+%{_libdir}/qt5/mkspecs/modules/qt_WebEngineViewer.pri
+%{_includedir}/KPim5/MessageComposer
+%{_includedir}/KPim5/MessageCore
+%{_includedir}/KPim5/MessageList
+%{_includedir}/KPim5/MessageViewer
+%{_includedir}/KPim5/MimeTreeParser
+%{_includedir}/KPim5/TemplateParser
+%{_includedir}/KPim5/WebEngineViewer
+%{_libdir}/cmake/KPim5MessageComposer
+%{_libdir}/cmake/KPim5MessageCore
+%{_libdir}/cmake/KPim5MessageList
+%{_libdir}/cmake/KPim5MessageViewer
+%{_libdir}/cmake/KPim5MimeTreeParser
+%{_libdir}/cmake/KPim5TemplateParser
+%{_libdir}/cmake/KPim5WebEngineViewer
+%{_libdir}/libKPim5MessageComposer.so
+%{_libdir}/libKPim5MessageCore.so
+%{_libdir}/libKPim5MessageList.so
+%{_libdir}/libKPim5MessageViewer.so
+%{_libdir}/libKPim5MimeTreeParser.so
+%{_libdir}/libKPim5TemplateParser.so
+%{_libdir}/libKPim5WebEngineViewer.so
